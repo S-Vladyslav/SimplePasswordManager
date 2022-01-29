@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using CsvHelper;
+using System.Globalization;
 
 namespace SimplePasswordManager
 {
@@ -24,7 +27,14 @@ namespace SimplePasswordManager
 
         private void CreateDBBtn_Click(object sender, EventArgs e)
         {
-
+            using (var writer = new StreamWriter(@"DataBases\"+ NameOfNewDB.Text + ".csv"))
+            {
+                using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+                {
+                    csv.WriteRecords("Decrypted DataBase!");
+                }
+            }
+            this.Close();
         }
     }
 }

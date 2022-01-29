@@ -72,7 +72,7 @@ namespace SimplePasswordManager
             this.CSVFileNames.Name = "CSVFileNames";
             this.CSVFileNames.Size = new System.Drawing.Size(391, 28);
             this.CSVFileNames.TabIndex = 2;
-            this.CSVFileNames.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.CSVFileNames.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CSVFileNames_MouseClick);
             // 
             // CreateNew
             // 

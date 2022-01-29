@@ -29,21 +29,21 @@ namespace SimplePasswordManager
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NameOfNewDB = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.CreateDBBtn = new System.Windows.Forms.Button();
             this.CancelBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // NameOfNewDB
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(12, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(391, 27);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Name for Data Base";
+            this.NameOfNewDB.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.NameOfNewDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NameOfNewDB.Location = new System.Drawing.Point(12, 58);
+            this.NameOfNewDB.Name = "NameOfNewDB";
+            this.NameOfNewDB.Size = new System.Drawing.Size(391, 27);
+            this.NameOfNewDB.TabIndex = 0;
+            this.NameOfNewDB.Text = "Name for Data Base";
             // 
             // textBox2
             // 
@@ -95,7 +95,7 @@ namespace SimplePasswordManager
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.CreateDBBtn);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.NameOfNewDB);
             this.Name = "CreatingNewDBWindow";
             this.Text = "Form2";
             this.ResumeLayout(false);
@@ -105,7 +105,7 @@ namespace SimplePasswordManager
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox NameOfNewDB;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button CreateDBBtn;
         private System.Windows.Forms.Button CancelBtn;

@@ -15,10 +15,6 @@ namespace SimplePasswordManager
         public LoginWindow()
         {
             InitializeComponent();
-
-            var FileActionObj = FileAction.GetInstance();
-
-            CSVFileNames.Items.AddRange(FileActionObj.GetCSVFileNames().ToArray());
         }
 
         private void UnlockBtn_Click(object sender, EventArgs e)
@@ -33,9 +29,11 @@ namespace SimplePasswordManager
             CreatingNewDB.ShowDialog();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void CSVFileNames_MouseClick(object sender, MouseEventArgs e)
         {
-
+            var FileActionObj = FileAction.GetInstance();
+            CSVFileNames.Items.Clear();
+            CSVFileNames.Items.AddRange(FileActionObj.GetCSVFileNames().ToArray());
         }
     }
 }
