@@ -27,11 +27,15 @@ namespace SimplePasswordManager
 
         private void CreateDBBtn_Click(object sender, EventArgs e)
         {
-            using (var writer = new StreamWriter($@"DataBases\{NameOfNewDB.Text}.csv"))
+            var cryptoInst = Crypto.GetInstance();
+            var fileName = NameOfNewDB.Text;
+            var password = PasswordOfNewDB.Text;
+
+            using (var writer = new StreamWriter($@"DataBases\{fileName}.csv"))
             {
                 using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
                 {
-                    csv.WriteField("Decrypted DataBase!");
+                    csv.WriteField(cryptoInst.Encrypt("Decrypted DataBase!", cryptoInst.ComputeSha256Hash(password)));
                 }
             }
             this.Close();

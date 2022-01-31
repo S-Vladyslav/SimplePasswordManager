@@ -30,7 +30,7 @@ namespace SimplePasswordManager
         private void InitializeComponent()
         {
             this.NameOfNewDB = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.PasswordOfNewDB = new System.Windows.Forms.TextBox();
             this.CreateDBBtn = new System.Windows.Forms.Button();
             this.CancelBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -45,16 +45,16 @@ namespace SimplePasswordManager
             this.NameOfNewDB.TabIndex = 0;
             this.NameOfNewDB.Text = "Name for Data Base";
             // 
-            // textBox2
+            // PasswordOfNewDB
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(12, 110);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(391, 27);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "password";
-            this.textBox2.UseSystemPasswordChar = true;
+            this.PasswordOfNewDB.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.PasswordOfNewDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PasswordOfNewDB.Location = new System.Drawing.Point(12, 110);
+            this.PasswordOfNewDB.Name = "PasswordOfNewDB";
+            this.PasswordOfNewDB.Size = new System.Drawing.Size(391, 27);
+            this.PasswordOfNewDB.TabIndex = 1;
+            this.PasswordOfNewDB.Text = "password";
+            this.PasswordOfNewDB.UseSystemPasswordChar = true;
             // 
             // CreateDBBtn
             // 
@@ -94,7 +94,7 @@ namespace SimplePasswordManager
             this.ClientSize = new System.Drawing.Size(415, 365);
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.CreateDBBtn);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.PasswordOfNewDB);
             this.Controls.Add(this.NameOfNewDB);
             this.Name = "CreatingNewDBWindow";
             this.Text = "Form2";
@@ -106,7 +106,7 @@ namespace SimplePasswordManager
         #endregion
 
         private System.Windows.Forms.TextBox NameOfNewDB;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox PasswordOfNewDB;
         private System.Windows.Forms.Button CreateDBBtn;
         private System.Windows.Forms.Button CancelBtn;
     }

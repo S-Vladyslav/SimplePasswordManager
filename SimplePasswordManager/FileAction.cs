@@ -7,7 +7,7 @@ using System.IO;
 
 namespace SimplePasswordManager
 {
-    enum Rows
+    enum Columns
     {
         Id,
         Name,
@@ -21,9 +21,7 @@ namespace SimplePasswordManager
     class FileAction
     {
         private FileAction() { }
-
         private static FileAction _instance;
-
         public static FileAction GetInstance()
         {
             if (_instance == null)

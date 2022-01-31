@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace SimplePasswordManager
 {
@@ -19,7 +20,15 @@ namespace SimplePasswordManager
 
         private void UnlockBtn_Click(object sender, EventArgs e)
         {
+            var cryptoInst = Crypto.GetInstance();
 
+            
+
+            Hide();
+            MainWindow mainWind = new MainWindow();
+            mainWind.Owner = this;
+            mainWind.ShowDialog();
+            Close();
         }
 
         private void CreateNew_Click(object sender, EventArgs e)

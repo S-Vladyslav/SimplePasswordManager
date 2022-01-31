@@ -8,12 +8,12 @@ namespace SimplePasswordManager
 {
     struct Unit
     {
-        public int Id;
         public string Name;
         public string Login;
         public string Password;
         public string URI;
         public string Phone;
         public string Notes;
+        public static string Key;
     }
 }
