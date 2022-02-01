@@ -91,6 +91,7 @@ namespace SimplePasswordManager
             Array.Copy(combinedData, iv.Length, cipherText, 0, cipherText.Length);
             aes.IV = iv;
             aes.Mode = CipherMode.CBC;
+            aes.Padding = PaddingMode.Zeros;
             ICryptoTransform decipher = aes.CreateDecryptor(aes.Key, aes.IV);
 
             using (MemoryStream ms = new MemoryStream(cipherText))

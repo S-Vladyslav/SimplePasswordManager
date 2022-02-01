@@ -29,13 +29,21 @@ namespace SimplePasswordManager
         {
             var cryptoInst = Crypto.GetInstance();
             var fileName = NameOfNewDB.Text;
-            var password = PasswordOfNewDB.Text;
+            Unit.Key = PasswordOfNewDB.Text;
+            var hashedPassword = cryptoInst.ComputeSha256Hash(Unit.Key);
+
+            var dataForCheck = new List<Unit>();
+            dataForCheck.Add(new Unit() { 
+                Name = ".", Login = ".", 
+                Password = cryptoInst.Encrypt("Decrypted DataBase!", hashedPassword),
+                URI = ".", Phone = ".", Notes = "."
+            });
 
             using (var writer = new StreamWriter($@"DataBases\{fileName}.csv"))
             {
                 using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
                 {
-                    csv.WriteField(cryptoInst.Encrypt("Decrypted DataBase!", cryptoInst.ComputeSha256Hash(password)));
+                    csv.WriteRecords(dataForCheck);
                 }
             }
             this.Close();

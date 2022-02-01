@@ -6,14 +6,25 @@ using System.Threading.Tasks;
 
 namespace SimplePasswordManager
 {
-    struct Unit
+    class Unit
     {
-        public string Name;
-        public string Login;
-        public string Password;
-        public string URI;
-        public string Phone;
-        public string Notes;
+        public string Name { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
+        public string URI { get; set; }
+        public string Phone { get; set; }
+        public string Notes { get; set; }
+
         public static string Key;
+
+        private static Unit _instance;
+        public static Unit GetInstanse()
+        {
+            if (_instance == null)
+            {
+                _instance = new Unit();
+            }
+            return _instance;
+        }
     }
 }
