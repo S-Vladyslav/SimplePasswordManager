@@ -16,5 +16,12 @@ namespace SimplePasswordManager
         {
             InitializeComponent();
         }
+
+        private void AddAccountBtn_Click(object sender, EventArgs e)
+        {
+            AddAccountWindow AddAccWind = new AddAccountWindow();
+            AddAccWind.Owner = this;
+            AddAccWind.ShowDialog();
+        }
     }
 }

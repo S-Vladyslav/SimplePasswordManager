@@ -23,14 +23,13 @@ namespace SimplePasswordManager
         {
             var cryptoInst = Crypto.GetInstance();
             var fileName = NameOfNewDB.Text;
-            Unit.Key = PasswordOfNewDB.Text;
-            var hashedPassword = cryptoInst.ComputeSha256Hash(Unit.Key);
+            var hashedPassword = cryptoInst.ComputeSha256Hash(PasswordOfNewDB.Text);
 
             var dataForCheck = new List<Unit>();
             dataForCheck.Add(new Unit() { 
                 Name = ".", Login = ".", 
                 Password = cryptoInst.Encrypt("Decrypted DataBase!", hashedPassword),
-                URI = ".", Phone = ".", Notes = "."
+                URL = ".", Phone = ".", Notes = "."
             });
 
             using (var writer = new StreamWriter($@"DataBases\{fileName}.csv"))

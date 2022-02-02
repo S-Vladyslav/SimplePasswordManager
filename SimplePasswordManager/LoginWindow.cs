@@ -24,17 +24,18 @@ namespace SimplePasswordManager
             }
 
             var cryptoInst = Crypto.GetInstance();
-            string fileName = $@"DataBases\{CSVFileNames.Text}";
+            Unit.File = $@"DataBases\{CSVFileNames.Text}";
+            Unit.Key = cryptoInst.ComputeSha256Hash(Password.Text);
             bool login = false;
 
-            using (StreamReader streamReader = new StreamReader(fileName))
+            using (StreamReader streamReader = new StreamReader(Unit.File))
             {
                 using (CsvReader csvReader = new CsvReader(streamReader, CultureInfo.InvariantCulture))
                 {
                     var csvRecords = csvReader.GetRecords<Unit>();
                     var recordsLst = csvRecords.ToList();
 
-                    if (cryptoInst.Decrypt(recordsLst[0].Password, cryptoInst.ComputeSha256Hash(Password.Text)).Trim() == "Decrypted DataBase!")
+                    if (cryptoInst.Decrypt(recordsLst[0].Password, Unit.Key).Trim() == "Decrypted DataBase!")
                     {
                         login = true;
                     }

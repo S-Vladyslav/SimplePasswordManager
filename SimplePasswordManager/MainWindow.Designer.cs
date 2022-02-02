@@ -40,7 +40,7 @@ namespace SimplePasswordManager
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.AddAccountBtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -150,19 +150,20 @@ namespace SimplePasswordManager
             this.textBox5.Size = new System.Drawing.Size(353, 27);
             this.textBox5.TabIndex = 10;
             // 
-            // button1
+            // AddAccountBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(508, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 35);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Add new";
-            this.button1.UseVisualStyleBackColor = false;
+            this.AddAccountBtn.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.AddAccountBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddAccountBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.AddAccountBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddAccountBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.AddAccountBtn.Location = new System.Drawing.Point(508, 4);
+            this.AddAccountBtn.Name = "AddAccountBtn";
+            this.AddAccountBtn.Size = new System.Drawing.Size(110, 35);
+            this.AddAccountBtn.TabIndex = 11;
+            this.AddAccountBtn.Text = "Add new";
+            this.AddAccountBtn.UseVisualStyleBackColor = false;
+            this.AddAccountBtn.Click += new System.EventHandler(this.AddAccountBtn_Click);
             // 
             // button2
             // 
@@ -200,7 +201,7 @@ namespace SimplePasswordManager
             this.ClientSize = new System.Drawing.Size(622, 286);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.AddAccountBtn);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
@@ -232,7 +233,7 @@ namespace SimplePasswordManager
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button AddAccountBtn;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
     }
