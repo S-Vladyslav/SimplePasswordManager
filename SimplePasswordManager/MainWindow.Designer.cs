@@ -29,7 +29,7 @@ namespace SimplePasswordManager
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.AccountNames = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,14 +45,15 @@ namespace SimplePasswordManager
             this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // AccountNames
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(13, 13);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(471, 24);
-            this.comboBox1.TabIndex = 0;
+            this.AccountNames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.AccountNames.FormattingEnabled = true;
+            this.AccountNames.Location = new System.Drawing.Point(13, 13);
+            this.AccountNames.Name = "AccountNames";
+            this.AccountNames.Size = new System.Drawing.Size(471, 24);
+            this.AccountNames.TabIndex = 0;
+            this.AccountNames.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AccountNames_MouseClick);
             // 
             // label1
             // 
@@ -110,6 +111,7 @@ namespace SimplePasswordManager
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.Location = new System.Drawing.Point(131, 68);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(353, 27);
             this.textBox1.TabIndex = 6;
             // 
@@ -212,7 +214,7 @@ namespace SimplePasswordManager
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.AccountNames);
             this.Name = "MainWindow";
             this.Text = "MainWindow";
             this.ResumeLayout(false);
@@ -222,7 +224,7 @@ namespace SimplePasswordManager
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox AccountNames;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

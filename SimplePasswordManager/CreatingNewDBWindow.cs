@@ -27,9 +27,12 @@ namespace SimplePasswordManager
 
             var dataForCheck = new List<Unit>();
             dataForCheck.Add(new Unit() { 
-                Name = ".", Login = ".", 
+                Name = ".", 
+                Login = ".", 
                 Password = cryptoInst.Encrypt("Decrypted DataBase!", hashedPassword),
-                URL = ".", Phone = ".", Notes = "."
+                URL = ".", 
+                Phone = ".", 
+                Notes = "."
             });
 
             using (var writer = new StreamWriter($@"DataBases\{fileName}.csv"))

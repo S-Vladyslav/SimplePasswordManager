@@ -35,7 +35,7 @@ namespace SimplePasswordManager
                     var csvRecords = csvReader.GetRecords<Unit>();
                     var recordsLst = csvRecords.ToList();
 
-                    if (cryptoInst.Decrypt(recordsLst[0].Password, Unit.Key).Trim() == "Decrypted DataBase!")
+                    if (cryptoInst.Decrypt(recordsLst[0].Password, Unit.Key) == "Decrypted DataBase!")
                     {
                         login = true;
                     }

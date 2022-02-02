@@ -104,7 +104,7 @@ namespace SimplePasswordManager
                     }
                 }
 
-                return plainText;
+                return plainText.Trim();
             }
         }
     }
